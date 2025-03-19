@@ -12,8 +12,10 @@ app.use('/api/users', userRoutes);
 
 await sequelize.sync({ alter: true });
 
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-undef
   console.log(`Server running on port ${PORT}`);
   connectDatabase();
 });

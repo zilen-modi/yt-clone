@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Sequelize } from 'sequelize';
 
 export const sequelize = new Sequelize('youtube_clone', 'postgres', '', {
