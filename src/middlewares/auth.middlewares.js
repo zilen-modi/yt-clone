@@ -3,7 +3,10 @@ import jwt from 'jsonwebtoken';
 import User from '../models/user.models.js';
 
 export const authMiddleware = async (req, res, next) => {
-  const accessToken = req.header('Authorization').split('Bearer ')[1];
+  const authorization = req.header('Authorization');
+  if (!authorization) return res.status(400).json({ message: 'Unauthorised request' });
+
+  const accessToken = authorization.split('Bearer ')[1];
 
   if (!accessToken) return res.status(400).json({ message: 'Unauthorised request' });
 
