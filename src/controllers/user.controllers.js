@@ -47,3 +47,7 @@ export const login = async (req, res) => {
 
   return res.status(200).json({ message: 'User login successfully', accessToken });
 };
+
+export const profile = (req, res) => {
+  return res.status(200).json({ user: req.user });
+};
